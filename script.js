@@ -67,6 +67,7 @@ async function renderNewQuote() {
     quoteInputElement.value = null
 }
 
+//TIMER STUFF, DOESNT QUITE WORK YET
 /*
 let startTime
 
