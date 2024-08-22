@@ -7,13 +7,14 @@ const wordPopularityElement  = document.getElementById('wordPopularity')
 const timerElement           = document.getElementById('timer')
 const wordList               = './english_10k.json'
 
-numberOfWordsElement.addEventListener('input', () => {                                             //listens for change in numberOfWords
-    location.reload();                                                                             //reloads page
-})
+function reloadOnChange(element) {                                                                 // adds an eventListener on any element and reloads the page if it hears anything
+    element.addEventListener('input', () => {                                                      // usage: reloadOnChange(element_name_here)
+        location.reload();
+    })
+}
 
-wordPopularityElement.addEventListener('input', () => {                                            //listens for change in wordPopularity
-    location.reload();                                                                             //reloads page
-})
+reloadOnChange(numberOfWordsElement)
+reloadOnChange(wordPopularityElement)
 
 quoteInputElement.addEventListener('input', () => {                                                // Looks for any change to the quoteInputElement textarea
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
@@ -66,9 +67,9 @@ async function renderNewQuote() {
     quoteDisplayElement.innerHTML = ''
     quote.split('').forEach(character => {
         const characterSpan = document.createElement('span')
-        if (character != null) {                                                                   // does not fix anything, stupid fucking bug, thank you @hawkins for the suggestions anyway
-            characterSpan.innerText = character
-            quoteDisplayElement.appendChild(characterSpan)
+        if (character != null) {                                                                   // kind of obsolete, was originally meant to be a fix to the null span bug but im too scared to remove it so it's staying,
+            characterSpan.innerText = character                                                    // surely a check to make sure the character isnt null cant hurt... right?
+            quoteDisplayElement.appendChild(characterSpan)                                         // https://i.imgur.com/fD2mgsp.gif
         }
     })
     quoteInputElement.value = null
