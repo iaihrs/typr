@@ -1,12 +1,11 @@
 const numberOfWords = document.getElementById('numberOfWords').value
 const wordPopularity = document.getElementById('wordPopularity').value
-const wordList = './english_10k.json'
-
 const quoteDisplayElement = document.getElementById('quoteDisplay')
 const quoteInputElement = document.getElementById('quoteInput')
 const numberOfWordsElement = document.getElementById('numberOfWords')
 const wordPopularityElement = document.getElementById('wordPopularity')
 const timerElement = document.getElementById('timer')
+const wordList = './english_10k.json'
 
 numberOfWordsElement.addEventListener('input', () => {
     location.reload();
