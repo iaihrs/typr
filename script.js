@@ -56,9 +56,9 @@ async function renderNewQuote() {
             return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled )
         }
 
-        test+=(words[randNum(0, wordPopularity)]+" ")                                              //oh my fucking god
+        test+=(words[randNum(0, wordPopularity)]+" ")                                              //oh my fucking god, +=" " caused it to add a " " every time a duplicate word appeared
     }
-    const quote = test.slice(0,-1)
+    const quote = test.slice(0,-1)                                                                 //this cuts the space off of the last word
     quoteDisplayElement.innerHTML = ''
     quote.split('').forEach(character => {
         const characterSpan = document.createElement('span')
