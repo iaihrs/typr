@@ -50,7 +50,6 @@ async function renderNewQuote() {
     const words = await getWordList()
     var test = ""
     for (let i = 0; i < numberOfWords; i++) { 
-        
         const randNum = (min, max) => {                                                            //picks random number between min and max - usage: randNum(x, y)
             minCeiled = Math.ceil(min)
             maxFloored = Math.floor(max)
@@ -59,9 +58,9 @@ async function renderNewQuote() {
         
         //var randNum = Math.random(1, wordPopularity)                                             //obsolete (leaving for archival just in case)
         test+=(words[randNum(0, wordPopularity)]+" ")                                              //oh my fucking god
-        console.log(randNum(0, wordPopularity))
-        console.log(test)
-        console.log(words[0])
+        //console.log(randNum(0, wordPopularity))
+        //console.log(test)
+        //console.log(words[0])
     }
     const quote = test.slice(0,-1)
     quoteDisplayElement.innerHTML = ''
