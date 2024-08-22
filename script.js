@@ -1,22 +1,21 @@
-const numberOfWords = document.getElementById('numberOfWords').value
-const wordPopularity = document.getElementById('wordPopularity').value
-const quoteDisplayElement = document.getElementById('quoteDisplay')
-const quoteInputElement = document.getElementById('quoteInput')
-const numberOfWordsElement = document.getElementById('numberOfWords')
-const wordPopularityElement = document.getElementById('wordPopularity')
-const timerElement = document.getElementById('timer')
-const wordList = './english_10k.json'
+const numberOfWords          = document.getElementById('numberOfWords').value
+const wordPopularity         = document.getElementById('wordPopularity').value
+const quoteDisplayElement    = document.getElementById('quoteDisplay')
+const quoteInputElement      = document.getElementById('quoteInput')
+const numberOfWordsElement   = document.getElementById('numberOfWords')
+const wordPopularityElement  = document.getElementById('wordPopularity')
+const timerElement           = document.getElementById('timer')
+const wordList               = './english_10k.json'
 
-numberOfWordsElement.addEventListener('input', () => {
-    location.reload();
+numberOfWordsElement.addEventListener('input', () => {                                             //listens for change in numberOfWords
+    location.reload();                                                                             //reloads page
 })
 
-wordPopularityElement.addEventListener('input', () => {
-    location.reload();
+wordPopularityElement.addEventListener('input', () => {                                            //listens for change in wordPopularity
+    location.reload();                                                                             //reloads page
 })
 
-// Looks for any change to the quoteInputElement textarea
-quoteInputElement.addEventListener('input', () => {
+quoteInputElement.addEventListener('input', () => {                                                // Looks for any change to the quoteInputElement textarea
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
     const arrayValue = quoteInputElement.value.split('')
     let correct = true
@@ -49,16 +48,15 @@ function getWordList() {
 async function renderNewQuote() {
     const words = await getWordList()
     var test = ""
-    for (let i = 0; i < numberOfWords; i++) {
-        var randNum = Math.floor(Math.random() * wordPopularity)
+    for (let i = 0; i < numberOfWords; i++) { 
+        var randNum = Math.floor(Math.random() * wordPopularity)                                   //picks 10 random numbers between 1 and wordPopularity
         test+=(words[randNum]+=" ")
     }
     const quote = test.slice(0,-1)
     quoteDisplayElement.innerHTML = ''
     quote.split('').forEach(character => {
         const characterSpan = document.createElement('span')
-        // does not fix anything, stupid fucking bug, thank you @hawkins for the suggestions anyway
-        if (character != null) {
+        if (character != null) {                                                                   // does not fix anything, stupid fucking bug, thank you @hawkins for the suggestions anyway
             characterSpan.innerText = character
             quoteDisplayElement.appendChild(characterSpan)
         }
@@ -66,8 +64,7 @@ async function renderNewQuote() {
     quoteInputElement.value = null
 }
 
-//TIMER STUFF, DOESNT QUITE WORK YET
-/*
+/*                                                                                                 //TIMER STUFF, DOESNT QUITE WORK YET
 let startTime
 
 function startTimer() {
