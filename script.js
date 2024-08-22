@@ -55,8 +55,7 @@ async function renderNewQuote() {
             maxFloored = Math.floor(max)
             return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled )
         }
-        
-        //var randNum = Math.random(1, wordPopularity)                                             //obsolete (leaving for archival just in case)
+
         test+=(words[randNum(0, wordPopularity)]+" ")                                              //oh my fucking god
     }
     const quote = test.slice(0,-1)
