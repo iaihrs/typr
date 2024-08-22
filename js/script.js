@@ -5,7 +5,7 @@ const quoteInputElement      = document.getElementById('quoteInput')
 const numberOfWordsElement   = document.getElementById('numberOfWords')
 const wordPopularityElement  = document.getElementById('wordPopularity')
 const timerElement           = document.getElementById('timer')
-const wordList               = './english_10k.json'
+const wordList               = 'resources/english_10k.json'
 
 function reloadOnChange(element) {                                                                 // adds an eventListener on any element and reloads the page if it hears anything
     element.addEventListener('input', () => {                                                      // usage: reloadOnChange(element_name_here)
