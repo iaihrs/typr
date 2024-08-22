@@ -68,7 +68,6 @@ async function renderNewQuote() {
         }
     })
     quoteInputElement.value = null
-    startTimer()
 }
 
 let startTime
