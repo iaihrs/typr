@@ -58,7 +58,7 @@ async function renderNewQuote() {
     quoteDisplayElement.innerHTML = ''
     quote.split('').forEach(character => {
         const characterSpan = document.createElement('span')
-        // Stops weird null character bug that makes correct typing seem incorrect by one character (thank you @hawkins for the fix)
+        // does not fix anything, stupid fucking bug, thank you @hawkins for the suggestions anyway
         if (character != null) {
             characterSpan.innerText = character
             quoteDisplayElement.appendChild(characterSpan)
