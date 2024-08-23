@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+    <link rel="stylesheet" href="css/teststyles.css">
+    <script src="js/script.js" defer></script>
+    <title>typr</title>
+</head>
+
+<header>
+    <div id="flex-container">
+        <nav class="navbar flex-item">
+            <ul class="navbar">
+                <li><a href="words.html">home</a></li>
+                <li><a href="settings.html">settings</a></li>
+                <li><a href="login.html">login</a></li>
+            </ul>
+        </nav>
+
+        <div class="title flex-item">
+            <h1 class="typ">typ</h1><h1 class="r">r</h1>
+        </div>
+
+        <div class="empty flex-item">
+
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="timer" id="timer"></div>
+    <div class="container">
+        <div class="quote-display" id="quoteDisplay"></div>
+        <textarea id="quoteInput" class="quote-input" unselectable="on" autofocus></textarea>
+    </div>
+    <div id="settings-container">
+        <div class="settings">
+            <div class="mode">
+                <button class="textButton active" id="modeWords"><span>words</span></button>
+                <button class="textButton" id="modeTimer"><span>timer</span></button>
+                <button class="textButton" id="modeQuotes"><span>quotes</span></button>
+            </div>
+
+            <div class="spacer"><p>‎</p></div>
+
+            <div class="wordsNumber">
+                <button class="textButton active" id="wordcount10"><span>10</span></button>
+                <button class="textButton" id="wordcount25"><span>25</span></button>
+                <button class="textButton" id="wordcount50"><span>50</span></button>
+                <button class="textButton" id="wordcount100"><span>100</span></button>
+            </div>
+
+            <div class="spacer"><p>‎</p></div>
+            
+            <div class="options">
+                <button class="textButton active" id="pop100"><span>words100</span></button>
+                <button class="textButton" id="pop1k"><span>words1k</span></button>
+                <button class="textButton" id="pop5k"><span>words5k</span></button>
+                <button class="textButton" id="pop10k"><span>words10k</span></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

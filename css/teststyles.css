@@ -38,6 +38,19 @@ body {
     margin: 0 auto;
 }
 
+#settings-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.active {
+    color:#e40000
+}
+
 .flex-item {
     width: 30%;
     height: 20%;
@@ -55,6 +68,7 @@ body {
     display: block;
     padding: 15px;
     text-align: center;
+    text-decoration: none;
 }
 
 .navbar li {
@@ -67,21 +81,45 @@ body {
 
 .navbar a:hover {
     color:#e40000;
+    text-decoration: underline;
 }
 
-#settings-container {
-    display: block;
-    margin: auto auto;
-    padding: 5rem;
+.textButton {
+    color: white;
+    padding: 1rem;
+    border-radius: .5rem;
+    background: 0 0;
+    user-select: none;
+    appearance: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.spacer {
+    background-color: transparent;
+    color: transparent;
+    height: 25px;
+    width: 5px;
+    background: #1c1d1d;
+    margin: .75em .75em;
+    transform: translateY(1px);
+    transition: .25s;
+    border-radius: .5rem;
 }
 
 .settings {
     width: fit-content;
-    margin: 0 auto;
     color: white;
     background-color: #343636;
-    padding: .25rem;
+    padding: .1rem;
     border-radius: .5rem;
+    display: inline-flex;
+    margin: 0 auto;
 }
 
 .quote-display, .quote-input {
@@ -89,7 +127,7 @@ body {
     height: 100%;
     margin: 0 auto;
     padding: 20px;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .quote-display {
@@ -97,7 +135,8 @@ body {
     margin-top: calc(0rem + 2px);
     margin-left: calc(0rem + 2px);
     margin-right: calc(0rem + 2px);
-    margin-top: 10%
+    margin-top: 20%;
+    animation: fadeIn 1s;
 }
 
 .quote-input {
@@ -120,6 +159,11 @@ body {
     text-decoration: underline;
 }
 
+.active {
+    color:#e40000;
+    text-decoration: underline;
+}
+
 body, .quote-input {
     font-family: 'JetBrains Mono';
 }
@@ -130,5 +174,4 @@ body, .quote-input {
     width: 60%;
     margin: 0 auto;
     text-align: center;
-
 }

@@ -1,20 +1,61 @@
-const numberOfWords          = document.getElementById('numberOfWords').value
-const wordPopularity         = document.getElementById('wordPopularity').value
+var numberOfWords            = 10
+var wordPopularity           = 100
 const quoteDisplayElement    = document.getElementById('quoteDisplay')
 const quoteInputElement      = document.getElementById('quoteInput')
-const numberOfWordsElement   = document.getElementById('numberOfWords')
-const wordPopularityElement  = document.getElementById('wordPopularity')
 const timerElement           = document.getElementById('timer')
 const wordList               = 'resources/english_10k.json'
 
+const words10Element         = document.getElementById('wordcount10')
+const words25Element         = document.getElementById('wordcount25')
+const words50Element         = document.getElementById('wordcount50')
+const words100Element        = document.getElementById('wordcount100')
+
+const modeTimerElement       = document.getElementById('modeTimer')
+const modeWordsElement       = document.getElementById('modeWords')
+const modeQuotesElement      = document.getElementById('modeQuotes')
+
+const wordPop100Element      = document.getElementById('pop100')
+const wordPop1kElement       = document.getElementById('pop1k')
+const wordPop5kElement       = document.getElementById('pop5k')
+const wordPop10kElement      = document.getElementById('pop10k')
+
 function reloadOnChange(element) {                                                                 // adds an eventListener on any element and reloads the page if it hears anything
     element.addEventListener('input', () => {                                                      // usage: reloadOnChange(element_name_here)
-        location.reload();
+        location.reload()
     })
 }
 
-reloadOnChange(numberOfWordsElement)
-reloadOnChange(wordPopularityElement)
+function words(element, wordNum, owe1, owe2, owe3) {
+    element.addEventListener('click', () => {
+        numberOfWords = wordNum
+        renderNewQuote()
+        element.classList.add('active')
+        owe1.classList.remove('active')
+        owe2.classList.remove('active')
+        owe3.classList.remove('active')
+    })
+}
+
+function popularity(element, popNum, ope1, ope2, ope3) {
+    element.addEventListener('click', () => {
+        wordPopularity = popNum
+        renderNewQuote()
+        element.classList.add('active')
+        ope1.classList.remove('active')
+        ope2.classList.remove('active')
+        ope3.classList.remove('active')
+    })
+}
+
+words(words10Element, 10, words25Element, words50Element, words100Element)
+words(words25Element, 25, words10Element, words50Element, words100Element)
+words(words50Element, 50, words25Element, words10Element, words100Element)
+words(words100Element, 100, words25Element, words50Element, words10Element)
+
+popularity(wordPop100Element, 100, wordPop1kElement, wordPop5kElement, wordPop10kElement)
+popularity(wordPop1kElement, 1000, wordPop100Element, wordPop5kElement, wordPop10kElement)
+popularity(wordPop5kElement, 5000, wordPop1kElement, wordPop100Element, wordPop10kElement)
+popularity(wordPop10kElement, 10000, wordPop1kElement, wordPop5kElement, wordPop100Element)
 
 quoteInputElement.addEventListener('input', () => {                                                // Looks for any change to the quoteInputElement textarea
     const arrayQuote = quoteDisplayElement.querySelectorAll('span')
