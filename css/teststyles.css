@@ -1,0 +1,134 @@
+.typ {
+    color: #fff;
+}
+
+.r {
+    color: #e40000;
+    text-decoration: underline;
+}
+
+.typ, .r {
+    display:inline;
+    font-weight: bold;
+}
+
+.title {
+    width: fit-content;
+    font-size: 2rem;
+    text-align: center;
+}
+
+body, .quote-input {
+    font-family: 'JetBrains Mono';
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1c1d1d;
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.flex-item {
+    width: 30%;
+    height: 20%;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+}
+
+.navbar a {
+    display: block;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar li {
+    float:left;
+}
+
+.navbar a:visited, a:active, a:link {
+    color:white;
+}
+
+.navbar a:hover {
+    color:#e40000;
+}
+
+#settings-container {
+    display: block;
+    margin: auto auto;
+    padding: 5rem;
+}
+
+.settings {
+    width: fit-content;
+    margin: 0 auto;
+    color: white;
+    background-color: #343636;
+    padding: .25rem;
+    border-radius: .5rem;
+}
+
+.quote-display, .quote-input {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+
+.quote-display {
+    color:#525656;
+    margin-top: calc(0rem + 2px);
+    margin-left: calc(0rem + 2px);
+    margin-right: calc(0rem + 2px);
+    margin-top: 10%
+}
+
+.quote-input {
+    background-color: transparent;
+    border: transparent;
+    color: transparent;
+    outline: none;
+    width: 100%;
+    resize: none;
+    user-select: none;
+    margin-top: -30%
+}
+
+.correct {
+    color:#ffffff;
+}
+
+.incorrect {
+    color: #e40000;
+    text-decoration: underline;
+}
+
+body, .quote-input {
+    font-family: 'JetBrains Mono';
+}
+
+.container {
+    background-color: transparent;
+    height: 40vh;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+
+}
