@@ -41,6 +41,13 @@ quoteInputElement.addEventListener('input', () => {                             
     if (correct) renderNewQuote()
 })
 
+quoteInputElement.addEventListener("focusout", function() {                                        // Refuses to let the textArea lose focus, this is probably a bad idea
+    _this = this
+    setTimeout(function () {
+        _this.focus()
+    }, 0)
+})
+
 function getWordList() {
     return fetch(wordList)
     .then((response) => response.json())
